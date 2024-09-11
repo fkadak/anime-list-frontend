@@ -10,7 +10,7 @@ function Profile() {
     useEffect(() => {
         const fetchAnimeList = async () => {
             try {
-                const response = await axios.get('/api/anime');
+                const response = await axios.get('https://anime-list-web-d4706ee3e7f1.herokuapp.com/api/anime');
                 setAnimeList(response.data.data);
                 
                 const detailsPromises = response.data.data.map(anime => 
@@ -45,7 +45,7 @@ function Profile() {
 
     const handleStatusChange = async (animeId, newStatus) => {
         try {
-            await axios.put(`/api/anime/${animeId}`, { status: newStatus });
+            await axios.put(`https://anime-list-web-d4706ee3e7f1.herokuapp.com/api/anime/${animeId}`, { status: newStatus });
             // Update the local state with the new status
             setAnimeList(prevAnimeList =>
                 prevAnimeList.map(anime =>
@@ -65,7 +65,7 @@ function Profile() {
 
     const handleDelete = async (animeId) => {
         try {
-            await axios.delete(`/api/anime/${animeId}`);
+            await axios.delete(`https://anime-list-web-d4706ee3e7f1.herokuapp.com/api/anime/${animeId}`);
             setAnimeList(prevAnimeList => prevAnimeList.filter(anime => anime.id !== animeId));
         } catch (error) {
             console.error('Error deleting anime:', error);

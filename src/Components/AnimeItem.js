@@ -52,7 +52,7 @@ function AnimeItem() {
             return;
         }
 
-        axios.post('/api/anime', new_anime)
+        axios.post('https://anime-list-web-d4706ee3e7f1.herokuapp.com/api/anime', new_anime)
             .then(response => {
                 console.log(response.data);
             })
