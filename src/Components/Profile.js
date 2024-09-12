@@ -127,7 +127,6 @@ const ProfileStyled = styled.div`
     }
 
     h1{
-        color: blue;
         display: inline-block;
         font-size: 3rem;
         margin-bottom: 1.5rem;
